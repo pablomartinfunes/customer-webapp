@@ -3,10 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>List of Customers</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" media="all" th:href="@{/css/style.css}"/>
 </head>
 <body>
 <h1>Customers</h1>
-<a href="/saveCustomer">Save Customer</a>
+<p><a href="/saveCustomer" id="saveCustomer">Save Customer</a></p>
 <table>
     <thead>
         <tr>
@@ -16,7 +17,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr th:each="customer: ${customers}">
+        <tr th:each="customer: ${customers}" id="customer-table">
             <td th:text="${customer.firstName}" />
             <td th:text="${customer.lastName}" />
             <td th:text="${customer.email}" />
